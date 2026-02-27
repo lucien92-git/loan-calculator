@@ -1,0 +1,54 @@
+.lce-loan-calculator {
+    border: 1px solid #dcdfe5;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 420px;
+    background: #fff;
+}
+
+.lce-loan-calculator,
+.lce-loan-calculator * {
+    box-sizing: border-box;
+}
+
+.lce-field-group {
+    margin-bottom: 14px;
+}
+
+.lce-field-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.lce-field-group input,
+.lce-field-group select {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    border: 1px solid #c8ccd4;
+    border-radius: 6px;
+    background: #fff;
+}
+
+.lce-calculate-button {
+    width: 100%;
+    border: 0;
+    background: #146ef5;
+    color: #fff;
+    border-radius: 6px;
+    padding: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 16px;
+}
+
+.lce-calculate-button:hover,
+.lce-calculate-button:focus {
+    background: #0f57c4;
+}
+
+.lce-results p {
+    margin: 6px 0;
+}
