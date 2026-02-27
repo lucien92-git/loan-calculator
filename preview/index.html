@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loan Calculator UI Preview</title>
+  <link rel="stylesheet" href="../assets/css/loan-calculator.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f3f5f8;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+    .preview-shell {
+      width: 100%;
+      max-width: 900px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      align-items: start;
+    }
+    .preview-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px solid #d9dde5;
+      box-shadow: 0 6px 18px rgba(31, 41, 55, 0.08);
+    }
+    .preview-card h1 {
+      margin: 0 0 10px;
+      font-size: 20px;
+    }
+    .preview-card p {
+      margin: 0;
+      color: #4b5563;
+      line-height: 1.5;
+    }
+    .lce-loan-calculator { max-width: 100%; }
+
+    /* Fallback preview styles (also loaded from ../assets/css/loan-calculator.css). */
+    .lce-loan-calculator { border: 1px solid #dcdfe5; border-radius: 8px; padding: 20px; max-width: 420px; background: #fff; }
+    .lce-loan-calculator, .lce-loan-calculator * { box-sizing: border-box; }
+    .lce-field-group { margin-bottom: 14px; }
+    .lce-field-group label { display: block; margin-bottom: 6px; font-weight: 600; }
+    .lce-field-group input, .lce-field-group select { display: block; width: 100%; max-width: 100%; padding: 10px; border: 1px solid #c8ccd4; border-radius: 6px; background: #fff; }
+    .lce-calculate-button { width: 100%; border: 0; background: #146ef5; color: #fff; border-radius: 6px; padding: 12px; font-weight: 600; cursor: pointer; margin-bottom: 16px; }
+    .lce-calculate-button:hover, .lce-calculate-button:focus { background: #0f57c4; }
+    .lce-results p { margin: 6px 0; }
+  </style>
+</head>
+<body>
+  <div class="preview-shell">
+    <div class="preview-card">
+      <h1>Loan Calculator Preview</h1>
+      <p>Now includes country selection so the calculator updates and displays the matching currency format instantly.</p>
+    </div>
+
+    <div class="lce-loan-calculator" data-default-country="US">
+      <div class="lce-field-group">
+        <label for="lce-preview-country">Country</label>
+        <select id="lce-preview-country" class="lce-country">
+          <option value="US" selected>United States (USD)</option>
+          <option value="GB">United Kingdom (GBP)</option>
+          <option value="EU">Euro Area (EUR)</option>
+          <option value="CA">Canada (CAD)</option>
+          <option value="AU">Australia (AUD)</option>
+          <option value="IN">India (INR)</option>
+          <option value="JP">Japan (JPY)</option>
+          <option value="MY">Malaysia (MYR)</option>
+          <option value="SG">Singapore (SGD)</option>
+        </select>
+      </div>
+
+      <div class="lce-field-group">
+        <label for="lce-preview-amount">Loan Amount</label>
+        <input id="lce-preview-amount" type="number" min="0" step="100" class="lce-amount" value="250000" />
+      </div>
+
+      <div class="lce-field-group">
+        <label for="lce-preview-rate">Annual Interest Rate (%)</label>
+        <input id="lce-preview-rate" type="number" min="0" step="0.01" class="lce-rate" value="6.5" />
+      </div>
+
+      <div class="lce-field-group">
+        <label for="lce-preview-years">Term (Years)</label>
+        <input id="lce-preview-years" type="number" min="1" step="1" class="lce-years" value="30" />
+      </div>
+
+      <button class="lce-calculate-button" type="button">Calculate Payment</button>
+
+      <div class="lce-results" aria-live="polite">
+        <p><strong>Currency:</strong> <span class="lce-currency-code">USD ($)</span></p>
+        <p><strong>Monthly Payment:</strong> <span class="lce-monthly-payment">—</span></p>
+        <p><strong>Total Payment:</strong> <span class="lce-total-payment">—</span></p>
+        <p><strong>Total Interest:</strong> <span class="lce-total-interest">—</span></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="../assets/js/loan-calculator.js"></script>
+</body>
+</html>
